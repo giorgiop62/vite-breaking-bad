@@ -3,6 +3,10 @@ import {store} from '../data/store'
 
 export default {
   name:'CardComponent',
+  props:{
+   card:Object
+  },
+
   data(){
     return{
       store
@@ -14,9 +18,18 @@ export default {
 </script>
 
 <template>
-    <div class="sc-card col-4" v-for="attore in store.attoriLista" :key="attore.id">{{attore.name}}>
+  <!--name img stato serie  -->
+  <div class="sc-card col-3">
+    <img :src="card.img" alt="card.name">
+    <h4>{{card.name}}</h4>
+    <p>{{card.status}}</p>
+    <p>{{card.category}}</p>
+
+
   
-    </div>
+
+  </div>
+  
     
 
 
@@ -29,11 +42,12 @@ export default {
 <style lang="scss" scoped>
 .sc-card{
   text-align: center;
-  height: 100px;
-  width: 200px;
-  background-color: yellow;
 
+  img{
+    max-width: 100%;
 
+  }
+ 
 }
 
 

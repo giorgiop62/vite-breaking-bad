@@ -1,9 +1,16 @@
 <script>
+import CardComponent from './CardComponent.vue'
+import {store} from '../data/store'
 
 export default {
   name:'AppMain',
+  components: {
+    CardComponent
+  },
+
   data(){
     return{
+      store
 
     }
   }
@@ -32,6 +39,13 @@ export default {
     <div class="input-group rounded">
     <input type="search" class="form-control rounded" placeholder="Founder" aria-label="Search" aria-describedby="search-addon" />
   </div>
+  <div class="row">
+    <CardComponent v-for="attore in store.attoriLista" :key="attore.id"
+    :card="attore"/>
+
+  </div>
+
+
 
     
 
@@ -47,11 +61,7 @@ export default {
 
 
 <style lang="scss" scoped>
-.container {
-  background-color: white;
-  height: 200px;
-  width: 300px;
-}
+
 
 select {
   width: 200px;
