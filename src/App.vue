@@ -2,35 +2,42 @@
 <script>
 import axios from 'axios'
 import AppMain from './components/AppMain.vue'
-
+import CardComponent from './components/CardComponent.vue'
+import {store} from './data/store'
 
 export default {
+
   name:'App',
   data(){
     return{
+      store,
+      
+
+      
      
     }
   },
   components: {
     AppMain,
+    CardComponent
   },
 
   methods:{
-    getActors(){
-      axios.get(store.ApiUrl)
-    .then(result =>{
+     getActors(){
+       axios.get(store.apiUrl)
+     .then(result =>{
       store.attoriLista = result.data
-    })
-    .catch(error =>{
-      console.log(error)
-    })
+     })
+     .catch(error =>{
+       console.log(error)
+     })
 
-    }
+   }
 
   },
 
   mounted(){
-    this.getActors();
+     this.getActors();
     
 
     
@@ -42,8 +49,8 @@ export default {
 
 <template>
   <AppMain />
-  <Actors />
-  
+  <CardComponent/>
+
 </template>
 
 

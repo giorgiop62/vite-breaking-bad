@@ -1,4 +1,5 @@
 <script>
+
 export default {
   name:'AppMain',
   data(){
@@ -30,11 +31,6 @@ export default {
 
     <div class="input-group rounded">
     <input type="search" class="form-control rounded" placeholder="Founder" aria-label="Search" aria-describedby="search-addon" />
-  </div>
-
-  <div class="actors">
-    
-
   </div>
 
     
